@@ -6,7 +6,7 @@ namespace LibreriasJuego
     public interface Continente
     {
         String nombre { get; }
-        List<Pais> getPaises();
+        List<Pais> paises { get; }
         Pais getPais(string nombrePais);
 
 
