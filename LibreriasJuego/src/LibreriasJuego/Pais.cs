@@ -1,9 +1,15 @@
 ﻿namespace LibreriasJuego
 {
-    public interface Pais
+    public class Pais:IPais
     {
-        string nombre { get; }
-        string capital { get; }
-        Continente continente { get; }
+        internal Pais(IContinente,string nombre, string capital)
+        {
+            this.nombre = nombre;
+            this.capital = capital;
+            this.continente = continente;
+        }
+        public string nombre { get; }
+        public string capital { get; }
+        public IContinente continente { get; }
     }
 }

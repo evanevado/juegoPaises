@@ -11,8 +11,8 @@ namespace PruebasLibreria
         {
             
             
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Pais españa = baseDatosGeografica.getPais("España");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IPais españa = baseDatosGeografica.getPais("España");
             Assert.AreEqual(españa.capital, "Madrid");
         }
 
@@ -20,17 +20,17 @@ namespace PruebasLibreria
         public void TestEspaña_Nombre()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Pais españa = baseDatosGeografica.getPais("España");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IPais españa = baseDatosGeografica.getPais("España");
             Assert.AreEqual(españa.nombre, "España");
         }
         [TestMethod]
         public void TestEspaña_Continente()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Pais españa = baseDatosGeografica.getPais("España");
-            Continente europa = baseDatosGeografica.getContinente("Europa"); ;
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IPais españa = baseDatosGeografica.getPais("España");
+            IContinente europa = baseDatosGeografica.getContinente("Europa"); ;
             Assert.AreEqual(españa.continente, europa);
         }
 

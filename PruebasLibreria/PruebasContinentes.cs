@@ -11,8 +11,8 @@ namespace PruebasLibreria
         public void TestEuropa_Nombre()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Continente europa = baseDatosGeografica.getContinente("Europa");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IContinente europa = baseDatosGeografica.getContinente("Europa");
             Assert.AreEqual(europa.nombre, "Europa");
         }
 
@@ -20,8 +20,8 @@ namespace PruebasLibreria
         public void TestEuropa_Paises()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Continente europa = baseDatosGeografica.getContinente("Europa");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IContinente europa = baseDatosGeografica.getContinente("Europa");
             Assert.AreNotEqual(europa.paises.Count,0);
         }
 
@@ -29,9 +29,9 @@ namespace PruebasLibreria
         public void TestEuropa_España()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Continente europa = baseDatosGeografica.getContinente("Europa");
-            Pais españa = europa.getPais("España");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IContinente europa = baseDatosGeografica.getContinente("Europa");
+            IPais españa = europa.getPais("España");
             Assert.IsNotNull(españa);
         }
 
@@ -39,9 +39,9 @@ namespace PruebasLibreria
         public void TestEuropa_NuevaZelanda()
         {
 
-            BaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
-            Continente europa = baseDatosGeografica.getContinente("Europa");
-            Pais nuevaZelanda = europa.getPais("Nueva Zelanda");
+            IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
+            IContinente europa = baseDatosGeografica.getContinente("Europa");
+            IPais nuevaZelanda = europa.getPais("Nueva Zelanda");
             Assert.IsNull(nuevaZelanda);
         }
     }

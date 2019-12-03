@@ -4,15 +4,33 @@ using System.Text;
 
 namespace LibreriasJuego
 {
-    public interface Pregunta
+    public class Pregunta:IPregunta
     {
-        Partida Partida { get; }
-        Pais Pais { get; }     
-        bool acierto { get; }
-        int IntentosRestantes { get; }
-        List<String> respuestasPropuestas { get; }
+        internal Pregunta(IPartida partida, IPais pais)
+        {
+            this.Partida = partida;
+            this.Pais = pais;
+            this.IntentosRestantes = 3;
+            this.respuestasPropuestas = new List<String>();
+            this.acierto = false;
+        }
 
-        bool proponerRespuesta(String capitalSugerida);
+        public IPartida Partida { get; }
+        public IPais Pais { get; }     
+        public bool acierto { get; private set; }
+        public int IntentosRestantes { get; private set; }
+        public List<String> respuestasPropuestas { get; }
+
+        public bool proponerRespuesta(String capitalSugerida)
+        {
+            if (this.IntentosRestantes == 0) throw new Exception("Ruinaca... No te quedan intentos!");
+
+            respuestasPropuestas.Add(capitalSugerida);
+            this.IntentosRestantes--;
+            this.acierto = (capitalSugerida == this.Pais.capital);
+            return acierto;
+        }
+
 
 
 

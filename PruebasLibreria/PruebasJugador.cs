@@ -12,8 +12,8 @@ namespace PruebasLibreria
         public void TestAltaJugador()
         {
 
-            BaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
-            Jugador juan = baseDatosJugadores.nuevoJugador("Juan");
+            IBaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
+            IJugador juan = baseDatosJugadores.nuevoJugador("Juan");
             Assert.IsNotNull(juan);
         }
         //prueba recuperación
@@ -22,8 +22,8 @@ namespace PruebasLibreria
         public void TestRecuperacionJugador()
         {
 
-            BaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
-            Jugador juan = baseDatosJugadores.getJugador("Juan");
+            IBaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
+            IJugador juan = baseDatosJugadores.getJugador("Juan");
             Assert.IsNotNull(juan);
         }
 
@@ -31,8 +31,8 @@ namespace PruebasLibreria
         public void TestAltayRecuperacionJugador()
         {
 
-            BaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
-            Jugador juan = baseDatosJugadores.getOrCreateJugador("Juan");
+            IBaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
+            IJugador juan = baseDatosJugadores.getOrCreateJugador("Juan");
             Assert.IsNotNull(juan);
         }
 
@@ -42,8 +42,8 @@ namespace PruebasLibreria
         public void TestNombreJugador()
         {
 
-            BaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
-            Jugador juan = baseDatosJugadores.getOrCreateJugador("Juan");
+            IBaseDatosJugadores baseDatosJugadores = Juego.dameElJuego().baseDatosJugadores;
+            IJugador juan = baseDatosJugadores.getOrCreateJugador("Juan");
             Assert.AreEqual(juan.nombre, "Juan");
         }
 
