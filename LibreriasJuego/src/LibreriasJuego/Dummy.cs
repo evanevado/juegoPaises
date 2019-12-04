@@ -12,6 +12,7 @@ namespace LibreriasJuego.src.LibreriasJuego
             //equivale a
             pintarEvaluacion((j)=>j*j,5);
             //le pongo j como cualquier nombre... estoy diciendo que recibe un parámetro y lo que tiene que hacer con él
+            // y eslo lo lanza pintarEvaluacion
         }
 
         public static int cuadrado(int x)
