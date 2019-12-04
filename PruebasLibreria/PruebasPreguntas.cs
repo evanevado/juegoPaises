@@ -61,6 +61,7 @@ namespace PruebasLibreria
             pregunta.proponerRespuesta("Ruina");
             pregunta.proponerRespuesta("Ruina");
             pregunta.proponerRespuesta("Ruina");
+            intentos = pregunta.IntentosRestantes;
             Assert.AreEqual(intentos, 0);
 
             //pregunta.proponerRespuesta("Ruina");

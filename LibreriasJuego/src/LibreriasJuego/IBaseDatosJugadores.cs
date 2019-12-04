@@ -6,7 +6,7 @@ namespace LibreriasJuego
 {
     public interface IBaseDatosJugadores
     {
-        List<IJugador> getJugadores { get; }
+        IList<IJugador> getJugadores { get; }
 
         IJugador nuevoJugador(string nombreJugador);
         IJugador getJugador(string nombreJugador);

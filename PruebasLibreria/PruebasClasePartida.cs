@@ -11,7 +11,7 @@ namespace PruebasLibreria
         [TestMethod]
         public void TestCrearPartida()
         {
-            Partida p = 
+            //Partida p = 
 
         }
 

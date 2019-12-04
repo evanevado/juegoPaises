@@ -1,5 +1,7 @@
 using LibreriasJuego;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 
 namespace PruebasLibreria
 {
@@ -41,8 +43,25 @@ namespace PruebasLibreria
 
             IBaseDatosGeografica baseDatosGeografica = Juego.dameElJuego().baseDatosGeografica;
             IContinente europa = baseDatosGeografica.getContinente("Europa");
-            IPais nuevaZelanda = europa.getPais("Nueva Zelanda");
-            Assert.IsNull(nuevaZelanda);
+            // a getPais le debe llamar ThrowsException para controlar lo que devuelve
+            // thorwsexception espera una función, no un país que es lo que devuelve getPais
+            // por eso ponermos ()=>
+            // al método throwsexception le pasamos por parámetro lo que tiene que hacer cuando se produzca la excepción.  Equivale a un try-catch
+            //Action funcionALaQueTienesQueLlamar = recuperarNuevaZelanda;
+            //Assert.ThrowsException<KeyNotFoundException>(
+            //        funcionALaQueTienesQueLlamar  --> La pasamos como parámetro para que la lance el throwsException
+            //    );
+            Assert.ThrowsException<KeyNotFoundException>(
+                   () => europa.getPais("Nueva Zelanda") //para ahorrarnos definir un nombre de función.  Con () ya le decimos que es una función
+                   // y con => la definimos
+               );
+
+        }
+
+        void recuperarNuevaZelanda()
+        {
+            throw new Exception("Nueva Zelanda no existe");
+            
         }
     }
 }

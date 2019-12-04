@@ -8,8 +8,8 @@ namespace LibreriasJuego
     {
         private Juego() {
             // va a ser en el único sitio donde tenemos que modificar la conexión a base de datos
-            baseDatosJugadores = null;
-            baseDatosGeografica = null;
+            baseDatosJugadores = new BaseDatosJugadoresRAM();
+            baseDatosGeografica = new BaseDatosGeografica();
         }
 
         private static Juego elJuego;
